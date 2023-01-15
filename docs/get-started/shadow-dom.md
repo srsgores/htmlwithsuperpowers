@@ -4,20 +4,20 @@ title: Shadow DOM
 
 # Shadow DOM
 
-The Shadow DOM is the most complicated part of Web Components because they offer a level of encapsulation and isolation that has never existed on the web platfrom. 
+The Shadow DOM is the most complicated part of Web Components because it offers a level of encapsulation and isolation that has never existed on the web platfrom. 
 
 ```html
 <custom-alert>
   <p>This is Light DOM content</p>
-  -----------Shadow DOM-------------
-  | <img src="path/to/icon.svg"/>  |
-  | <slot></slot>                  |
-  | <button>Close</button>         |
-  ----------------------------------
+  -----------Shadow DOM--------------------
+  | <img src="path/to/icon.svg" alt="" /> |
+  | <slot></slot>                         |
+  | <button>Close</button>                |
+  -----------------------------------------
 </custom-alert>
 ```
 
-The Shadow DOM behaves a lot like an `<iframe>`, but better. Styling and scripting that happens within the Shadow DOM does not spill outside of its "shadow boundary". But three critical differences from an `<iframe>` are:
+The Shadow DOM behaves a lot like an `<iframe>`, but with more isolation. Styling and scripting that happens within the Shadow DOM does not spill outside of its "shadow boundary". But three critical differences from an `<iframe>` are:
 
 1. The Shadow DOM templates render as first-party content on the page.
 2. You avoid all the variable height issues related with `<iframe>` content.
@@ -46,7 +46,7 @@ Shadow Roots have two modes
 
 ```js{1-2,7-8}
 const myTemplate = document.createElement('template')
-myTemplate.innerHTML = `<div>Hello, world!</div>`;
+myTemplate.innerHTML = `<p>Hello, world!</p>`;
 
 class CustomAlert extends HTMLElement {
   constructor() {
